@@ -1,0 +1,22 @@
+<div class="d-flex gap-2 justify-content-center">
+    <h3 class="font"> Buscar por PAIS</h3>
+</div>
+
+<hr>
+<div class="row p-3">
+    <!-- captura el valor del output -->
+    <app-buscar (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)">
+    </app-buscar>
+</div>
+<hr>
+<!-- Alerta de error -->
+<div class="alert alert-danger" *ngIf="error">
+    No se encontro nada con el termino
+</div>
+
+<div class="row">
+    <div class="col">
+        <app-tabla [paises]="paises">
+        </app-tabla>
+    </div>
+</div>

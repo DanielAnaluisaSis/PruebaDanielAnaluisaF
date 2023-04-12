@@ -1,0 +1,20 @@
+<h3 class="d-flex gap-5 justify-content-center">
+    Buscar por region:
+    <small>{{regionActiva | titlecase}}</small>
+</h3>
+<hr>
+<div class="row ">
+    <div class="col">
+        <h5>Seleccione una region</h5>
+        <button *ngFor="let region of regiones" [class]="getClaseCss(region)" (click)="actvarRegion(region)">
+               {{region}}
+       </button>
+    </div>
+</div>
+
+<div class="row" *ngIf="paises.length > 0">
+    <div class="col">
+        <app-tabla [paises]="paises">
+        </app-tabla>
+    </div>
+</div>
